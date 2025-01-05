@@ -1,23 +1,27 @@
-'use strict';
-/* 
-//average function
-const calAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+"use strict";
+// Lesson
 
-//both averages
-const averageKoalas = calAverage(23, 34, 27);
-const averageDolphins = calAverage(85, 54, 41);
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Menete",
+  sex: "male",
+  birthYear: 1991,
+  job: "teacher",
+  friends: [" Michael", " Peter", " Stephen"],
+  hasDriversLicense: true,
+  calAge: function () {
+    return 2024 - this.birthYear;
+  },
 
-//checking winner
-const checkWinner = (avgDolphins, avgKoalas) => {
-    if (avgDolphins >= avgKoalas * 2) console.log(`Dolphins wins ( ${avgDolphins} vs. ${avgKoalas})`);
-    else if (avgKoalas > avgDolphins * 2) console.log(`Koalas wins ( ${avgKoalas} vs. ${avgDolphins})`);
-    else console.log("No winner!");
+  getSummary: function () {
+    return `${this.firstName + " " + this.lastName} is a ${this.calAge()}-year old ${
+      this.sex == "male" ? "man" : "woman"
+    } and ${this.sex == "male" ? "he" : "she"} is a ${this.job} ${
+      this.sex == "male" ? "his" : "her"
+    } friends are ${this.friends.toString()} and ${
+      this.hasDriversLicense ? "does have" : "does not have"
+    } a drivers license`;
+  },
 };
 
-checkWinner(averageDolphins, averageKoalas);
- */
-
-// Arrays
-const allFriends = ['Michael', 'Stephen', 'Peter'];
-
-console.log(allFriends);
+console.log(jonas.getSummary());
