@@ -29,7 +29,7 @@ function showGuessValue() {
     body.style.backgroundColor = '#60b347';
     highScore = guess >= highScore ? guess : highScore;
     scoreTrack++;
-    number.textContent = '?';
+    number.number.textContent = '?';
     number.textContent = `${secretNumber}`;
     highScoreLabel.textContent = `🥇 Highscore: ${highScore}`;
     secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -46,6 +46,7 @@ function showGuessValue() {
   if (scoreTrack <= 0) {
     message.textContent = 'Game Over!';
     checkButton.disabled = true;
+    scoreTrack = 20;
   }
 
   if (scoreTrack > 20) {
