@@ -1,19 +1,21 @@
 'use strict';
 
+//document models
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const buttonCloseModal = document.querySelector('.close-modal');
 const buttonsOpenModal = document.querySelectorAll('.show-modal');
 
-function openModal() {
+//functions
+const openModal = () => {
   overlay.classList.remove('hidden');
   modal.classList.remove('hidden');
-}
+};
 
-function closeModal() {
+const closeModal = () => {
   overlay.classList.add('hidden');
   modal.classList.add('hidden');
-}
+};
 
 // Attach event listeners
 buttonsOpenModal.forEach((button) => {
@@ -21,3 +23,7 @@ buttonsOpenModal.forEach((button) => {
 });
 overlay.addEventListener('click', closeModal);
 buttonCloseModal.addEventListener('click', closeModal);
+
+window.addEventListener('keydown', (x) => {
+  if (x.key === 'Escape') closeModal();
+});
